@@ -8,7 +8,7 @@
     "preview": "beamz-docs preview",
     "clean": "beamz-docs clean",
     "predeploy": "touch .docs-engine/out/.nojekyll",
-    "deploy": "gh-pages -d .docs-engine/out"
+    "deploy": "gh-pages -d .docs-engine/out --dotfiles"
   },
   "dependencies": {
     "@c360/beamz-docs": "git+ssh://git@github.ibm.com/zcomm/beamz-docs.git",
