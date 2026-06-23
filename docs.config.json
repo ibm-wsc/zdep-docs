@@ -6,8 +6,8 @@
     "toolingRepo": "https://github.ibm.com/zcomm/beamz-docs.git"
   },
   "vars": {
-    "basePath": "",
-    "domain": "https://pages.github.ibm.com"
+    "basePath": "/beamz-zos-demo-docs",
+    "domain": "https://pages.github.ibm.com/zEco-IaaS"
   },
   "navigation": [
     {
