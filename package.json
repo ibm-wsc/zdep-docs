@@ -6,10 +6,14 @@
     "build": "beamz-docs build",
     "build:public": "beamz-docs build --public",
     "preview": "beamz-docs preview",
-    "clean": "beamz-docs clean"
+    "clean": "beamz-docs clean",
+    "deploy": "gh-pages -d .docs-engine/out"
   },
   "dependencies": {
     "@c360/beamz-docs": "git+ssh://git@github.ibm.com/zcomm/beamz-docs.git",
     "lodash": "^4.18.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
