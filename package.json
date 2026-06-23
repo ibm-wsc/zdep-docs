@@ -7,7 +7,7 @@
     "build:public": "beamz-docs build --public",
     "preview": "beamz-docs preview",
     "clean": "beamz-docs clean",
-    "deploy": "gh-pages -d .docs-engine/out"
+    "deploy": "gh-pages -d .docs-engine/out -t true"
   },
   "dependencies": {
     "@c360/beamz-docs": "git+ssh://git@github.ibm.com/zcomm/beamz-docs.git",
