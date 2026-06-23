@@ -1,0 +1,259 @@
+{
+  "site": {
+    "title": "WSC z/OS Demo Assets on TechZone",
+    "prefix": "IBM",
+    "description": "Documentation for IBM WSC z/OS Demo Assets available on TechZone",
+    "toolingRepo": "https://github.ibm.com/zcomm/beamz-docs.git"
+  },
+  "vars": {
+    "basePath": "/docs",
+    "domain": "https://wsc-zos-demos.github.ibm.com"
+  },
+  "navigation": [
+    {
+      "title": "Welcome",
+      "path": "/"
+    },
+    {
+      "title": "Image Development",
+      "path": "/image-development",
+      "internal": true,
+      "children": [
+        {
+          "title": "Onboarding Guide",
+          "path": "/getting-started",
+          "children": [
+            {
+              "title": "Overview",
+              "path": "/getting-started/onboarding"
+            },
+            {
+              "title": "Step 1: Get CIO Ansible Access",
+              "path": "/getting-started/aap-access"
+            },
+            {
+              "title": "Step 2: Request a WSC VPN ID",
+              "path": "/getting-started/wsc-vpn-setup"
+            },
+            {
+              "title": "Step 3: Create an SSH Keypair",
+              "path": "/getting-started/ssh-keys"
+            },
+            {
+              "title": "Access Requirements",
+              "path": "/getting-started/access-requirements"
+            }
+          ]
+        },
+        {
+          "title": "Provisioning Automation",
+          "path": "/provisioning",
+          "children": [
+            {
+              "title": "Overview",
+              "path": "/provisioning/overview"
+            },
+            {
+              "title": "Using Ansible Automation Platform",
+              "path": "/provisioning/aap-usage"
+            },
+            {
+              "title": "Provision z/OS Workflow",
+              "path": "/provisioning/provision-workflow"
+            },
+            {
+              "title": "Instance Management",
+              "path": "/provisioning/instance-management"
+            },
+            {
+              "title": "Troubleshooting",
+              "path": "/provisioning/troubleshooting"
+            }
+          ]
+        },
+        {
+          "title": "Image Customization",
+          "path": "/customization",
+          "children": [
+            {
+              "title": "Overview",
+              "path": "/customization/overview"
+            },
+            {
+              "title": "Customization Workflow",
+              "path": "/customization/workflow"
+            },
+            {
+              "title": "Using zconfig-zade",
+              "path": "/customization/zconfig-zade"
+            },
+            {
+              "title": "Middleware Configuration",
+              "path": "/customization/middleware-config"
+            },
+            {
+              "title": "Testing Your Changes",
+              "path": "/customization/testing"
+            }
+          ]
+        },
+        {
+          "title": "Snapshot & Publishing",
+          "path": "/snapshot",
+          "children": [
+            {
+              "title": "Overview",
+              "path": "/snapshot/overview"
+            },
+            {
+              "title": "Creating Snapshots",
+              "path": "/snapshot/creating-snapshots"
+            },
+            {
+              "title": "Publishing to Cloud Object Storage",
+              "path": "/snapshot/publishing-cos"
+            },
+            {
+              "title": "Publishing to TechZone",
+              "path": "/snapshot/publishing-techzone"
+            },
+            {
+              "title": "Workflow Automation",
+              "path": "/snapshot/workflow-automation"
+            }
+          ]
+        },
+        {
+          "title": "Image Configurations",
+          "path": "/images",
+          "children": [
+            {
+              "title": "Available Images",
+              "path": "/images/catalog"
+            },
+            {
+              "title": "Base z/OS Configuration",
+              "path": "/images/base-zos-config"
+            },
+            {
+              "title": "CICS Demo Image",
+              "path": "/images/cics",
+              "children": [
+                {
+                  "title": "Overview",
+                  "path": "/images/cics/overview"
+                },
+                {
+                  "title": "What's Included",
+                  "path": "/images/cics/whats-included"
+                },
+                {
+                  "title": "Deployment Process",
+                  "path": "/images/cics/deployment-process"
+                },
+                {
+                  "title": "Configuration Details",
+                  "path": "/images/cics/configuration"
+                },
+                {
+                  "title": "Customization Guide",
+                  "path": "/images/cics/customization"
+                },
+                {
+                  "title": "Troubleshooting",
+                  "path": "/images/cics/troubleshooting"
+                },
+                {
+                  "title": "Technical Reference",
+                  "path": "/images/cics/reference"
+                }
+              ]
+            },
+            {
+              "title": "Db2 Demo Image",
+              "path": "/images/db2"
+            },
+            {
+              "title": "IMS Demo Image",
+              "path": "/images/ims"
+            },
+            {
+              "title": "MQ Demo Image",
+              "path": "/images/mq"
+            }
+          ]
+        },
+        {
+          "title": "Reference",
+          "path": "/reference",
+          "children": [
+            {
+              "title": "Architecture Overview",
+              "path": "/reference/architecture"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Demo Delivery",
+      "path": "/demo-delivery",
+      "internal": false,
+      "children": [
+        {
+          "title": "Using Demo Images",
+          "path": "/using-images",
+          "children": [
+            {
+              "title": "Getting Started",
+              "path": "/using-images/getting-started"
+            },
+            {
+              "title": "Provisioning from TechZone",
+              "path": "/using-images/provisioning"
+            },
+            {
+              "title": "Connecting to Your Instance",
+              "path": "/using-images/connecting"
+            },
+            {
+              "title": "Demo Scenarios",
+              "path": "/using-images/demo-scenarios"
+            }
+          ]
+        },
+        {
+          "title": "FAQs",
+          "path": "/reference/faqs"
+        }
+      ]
+    },
+    {
+      "title": "IBM Internal",
+      "path": "/internal",
+      "internal": true,
+      "children": [
+        {
+          "title": "Platform Architecture",
+          "path": "/internal/platform-architecture"
+        },
+        {
+          "title": "Deployment Automation Details",
+          "path": "/internal/deployment-automation"
+        },
+        {
+          "title": "Network Configuration",
+          "path": "/internal/network-config"
+        },
+        {
+          "title": "Storage Management",
+          "path": "/internal/storage-management"
+        },
+        {
+          "title": "Maintenance Procedures",
+          "path": "/internal/maintenance"
+        }
+      ]
+    }
+  ]
+}

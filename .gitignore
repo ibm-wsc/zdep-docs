@@ -1,0 +1,10 @@
+node_modules/
+.tooling/
+www/
+.DS_Store
+.docs-engine/
+package-lock.json
+.vscode/
+.github/
+
+# Made with Bob
