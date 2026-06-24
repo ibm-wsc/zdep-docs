@@ -21,6 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Configure Git for GitHub Enterprise
+        run: |
+          git config --global url."https://github.ibm.com/".insteadOf "ssh://git@github.ibm.com/"
+          git config --global url."https://github.ibm.com/".insteadOf "git@github.ibm.com:"
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
