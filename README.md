@@ -1,62 +1,41 @@
-# WSC to TechZone z/OS Demo Asset Pipeline Documentation
+# ZDEP Documentation
 
-This repository contains the documentation for the WSC to TechZone z/OS Demo Asset Pipeline - a platform for customizing z/OS base images into fully-featured demo images for IBM technical sales, published to TechZone.
+Documentation for the **IBM Z Demo Enablement Program (ZDEP)** - a platform for customizing z/OS base images into fully-featured demo images for IBM technical sales, published to TechZone.
 
-## 🚀 Quick Start
+## 🌐 Live Sites
+
+- **Public Site**: https://ibm-wsc.github.io/zdep-docs/
+- **Internal Site**: https://pages.github.ibm.com/zEco-IaaS/zdep-docs/ (when deployed)
+
+## 🚀 Quick Start for Contributors
 
 ### Prerequisites
 
-* Install [Node.JS with NPM](https://nodejs.org/en/download/) - v24 LTS or newer
+* Install [Node.JS with NPM](https://nodejs.org/en/download/) - v20 LTS or newer
 * Install [Visual Studio Code](https://code.visualstudio.com/Download) (optional but recommended)
-* Clone both repositories in the same parent directory:
-  - `beamz-docs` - The documentation framework
-  - `beamz-zos-demo-docs` - This content repository
 
-### Local Preview Setup
+### Local Preview
 
-The beamz-docs framework needs to be configured to point to this content repository.
-
-1. **Verify directory structure:**
-   ```
-   your-workspace/
-   ├── beamz/
-   │   ├── beamz-docs/           # The documentation framework
-   │   └── beamz-zos-demo-docs/  # This content repository
-   ```
-
-2. **Configure beamz-docs to use this content:**
-   
-   Edit `beamz-docs/package.json` and add a dependency pointing to this repo:
-   
-   ```json
-   {
-     "name": "@c360/beamz-docs",
-     "version": "1.1.13",
-     "dependencies": {
-       "beamz-zos-demo-docs": "file:/Users/jemery/Documents/workdir/git/beamz/beamz-zos-demo-docs"
-     }
-   }
-   ```
-   
-   **IMPORTANT:** This local file reference should **NOT be committed** to beamz-docs. It's for local development only.
-
-3. **Run the preview from beamz-docs:**
+1. **Install dependencies:**
    ```bash
-   cd beamz-docs
    npm install
+   ```
+
+2. **Start preview server:**
+   ```bash
    npm run preview
    ```
 
-4. **Open in browser:**
+3. **Open in browser:**
    Navigate to [http://localhost:3000/docs](http://localhost:3000/docs)
 
-The framework will watch your `.md` files in beamz-zos-demo-docs and automatically refresh the page when you make changes.
+The preview server watches your `.md` files and automatically refreshes when you make changes.
 
 ## 📝 Writing Documentation
 
 ### Adding New Pages
 
-1. Create your `.md` file in the appropriate directory in **this repository** (beamz-zos-demo-docs)
+1. Create your `.md` file in the appropriate directory
 2. Add it to the `navigation` array in `docs.config.json`
 3. Use `internal: true` to restrict pages to IBM Internal audiences only
 4. Save and the preview will automatically reload
@@ -86,8 +65,8 @@ Place images in an `assets/` folder next to your `.md` file:
 #### Linking to Other Pages
 
 ```markdown
-[Onboarding Guide](../getting-started/onboarding)
-[CICS Image](../images/cics)
+[Getting Started](../getting-started/onboarding)
+[CICS Image](../using-images/catalog/cics/overview)
 ```
 
 #### Mermaid Diagrams
@@ -104,10 +83,10 @@ graph TD
 ## 📂 Documentation Structure
 
 ```
-beamz-zos-demo-docs/
+zdep-docs/
 ├── home.md                          # Landing page
 ├── getting-started/
-│   └── onboarding.md               # User onboarding guide
+│   └── onboarding.md               # Internal user onboarding
 ├── provisioning/
 │   ├── provision-workflow.md       # AAP provisioning workflow
 │   ├── instance-management.md      # Managing instances
@@ -120,21 +99,20 @@ beamz-zos-demo-docs/
 │   ├── overview.md                 # Snapshot process
 │   ├── creating-snapshots.md      # How to create
 │   └── publishing.md              # Publishing to TechZone
-├── images/
-│   ├── cics.md                    # CICS demo image
-│   ├── db2.md                     # Db2 demo image
-│   └── ims.md                     # IMS demo image
-├── using-images/
+├── using-images/                   # Public-facing content
+│   ├── getting-started.md         # For demo users
 │   ├── provisioning.md            # Provisioning from TechZone
-│   └── demo-scenarios.md          # Demo use cases
+│   ├── connecting.md              # Connecting to z/OS
+│   └── catalog/                   # Image catalog
+│       ├── overview.md
+│       ├── mlz/                   # Machine Learning images
+│       └── cics/                  # CICS images
 ├── reference/
 │   ├── architecture.md            # System architecture
-│   ├── environment-variables.md   # Variable reference
-│   └── playbook-reference.md      # Ansible playbooks
+│   └── faqs.md                    # Frequently asked questions
 └── internal/                       # IBM Internal only
     ├── platform-architecture.md
-    ├── deployment-automation.md
-    └── maintenance.md
+    └── deployment-automation.md
 ```
 
 ## 🔧 Configuration
@@ -144,12 +122,13 @@ beamz-zos-demo-docs/
 ```json
 {
   "site": {
-    "title": "WSC z/OS Demo Pipeline",
+    "title": "Z Demo Enablement Program (ZDEP)",
     "prefix": "IBM",
-    "description": "Documentation for WSC to TechZone z/OS Demo Asset Pipeline"
+    "description": "Documentation for IBM Z Demo Enablement Program"
   },
   "vars": {
-    "basePath": "/docs"
+    "basePath": "/zdep-docs",
+    "domain": "https://ibm-wsc.github.io"
   },
   "navigation": [
     // Your navigation structure
@@ -157,17 +136,67 @@ beamz-zos-demo-docs/
 }
 ```
 
+**Important:** The `basePath` must match the repository name for GitHub Pages to work correctly.
+
 ### Navigation Structure
 
 - Use `children` to nest items
 - Use `internal: true` to restrict pages/sections to internal builds
 - Paths are relative to the repository root (without `.md` extension)
 
-## 🚀 Build & Deployment
+## 🚀 Deployment
 
-### Local Builds
+### Quick Deploy to Public Site
 
-From the `beamz-docs` directory:
+Use the provided script:
+
+```bash
+./deploy-public.sh
+```
+
+This script:
+1. Builds the public documentation (`npm run build:public`)
+2. Copies built files to the `zdep-docs` public repository
+3. Commits and pushes to trigger GitHub Actions deployment
+
+### Manual Deployment Steps
+
+If you prefer to run commands manually:
+
+```bash
+# 1. Build public site (strips internal-only content)
+npm run build:public
+
+# 2. Copy to public repo
+cp -r .docs-engine/out/* ../zdep-docs/
+
+# 3. Deploy
+cd ../zdep-docs
+git add .
+git commit -m "Deploy: $(date '+%Y-%m-%d %H:%M:%S')"
+git push origin main
+```
+
+### Verify Deployment
+
+1. Check GitHub Actions: https://github.com/ibm-wsc/zdep-docs/actions
+2. Wait for deployment to complete (~2-3 minutes)
+3. Visit: https://ibm-wsc.github.io/zdep-docs/
+
+### What Gets Published
+
+**Public Site (github.com/ibm-wsc/zdep-docs):**
+- ✅ Demo Delivery section
+- ✅ Image Catalog
+- ✅ FAQs
+- ❌ Image Development section (stripped)
+- ❌ IBM Internal sections (stripped)
+
+**Internal Site (github.ibm.com/zEco-IaaS/zdep-docs):**
+- ✅ All content including internal-only sections
+- ✅ Blue "IBM Internal Only" banners on restricted content
+
+### Build Commands
 
 ```bash
 # Internal build (includes all content)
@@ -176,55 +205,71 @@ npm run build
 # Public build (excludes internal content)
 npm run build:public
 
+# Preview locally
+npm run preview
+
 # Clean build artifacts
 npm run clean
 ```
 
-### GitHub Actions Deployment
+## 🔄 Deployment Architecture
 
-The repository will use GitHub Actions to automatically deploy:
+```
+Internal Repo (github.ibm.com/zEco-IaaS/zdep-docs)
+    ↓ Manual Build & Deploy (./deploy-public.sh)
+Public Repo (github.com/ibm-wsc/zdep-docs)
+    ↓ GitHub Actions (Automated)
+Live Site (https://ibm-wsc.github.io/zdep-docs/)
+```
 
-- **Internal site:** Hosted on github.ibm.com GitHub Pages (for IBM employees)
-- **External site:** Hosted on public GitHub Pages (for customers/partners)
-
-Deployment is triggered by pushing to specific branches:
-- `main` branch → Internal build
-- `public` branch → Public build
+**Why Manual Deployment?**
+GitHub Enterprise (github.ibm.com) doesn't have GitHub-hosted runners available, so we use manual deployment with a simple script.
 
 ## 📚 Related Repositories
 
 - **beamz-docs** - Documentation framework (Next.js + IBM Carbon Design System)
 - **beamz-zlpn-docs** - Example documentation site for ZLPN program
-- **zADE-deployer-ansible** - Ansible playbooks for z/OS provisioning
+- **z1090-deployer-ansible** - Ansible playbooks for z/OS provisioning
 - **zconfig-zade** - Ansible automation for z/OS middleware configuration
-- **mirror-zade-images** - Playbooks for snapshot and publishing to Cloud Object Storage
+- **mirror-z1090-images** - Playbooks for snapshot and publishing to Cloud Object Storage
 
 ## 🆘 Troubleshooting
 
 ### Preview won't start
 
-1. Make sure beamz-docs/package.json has the dependency pointing to this repo
-2. Clean the build artifacts: `cd beamz-docs && npm run clean`
-3. Remove node_modules: `rm -rf node_modules`
-4. Reinstall: `npm install`
-5. Try again: `npm run preview`
+1. Clean the build artifacts: `npm run clean`
+2. Remove node_modules: `rm -rf node_modules`
+3. Reinstall: `npm install`
+4. Try again: `npm run preview`
 
 ### Changes not appearing
 
 The preview server has hot-reload, but sometimes you need to:
-1. Save your `.md` file in beamz-zos-demo-docs
+1. Save your `.md` file
 2. Wait a few seconds
 3. Refresh your browser
 
-### Wrong content showing
+### Deployment issues
 
-Make sure beamz-docs/package.json is pointing to the correct absolute path for this repository.
+**Site shows only README:**
+- Verify GitHub Pages source is set to "GitHub Actions" (not "Deploy from a branch")
+- Check that `.nojekyll` file exists in public repo
+
+**Missing styles (ugly HTML):**
+- The `_next` directory must be included in deployment
+- Verify the workflow completed successfully
+
+**Broken links (404 errors):**
+- Verify `basePath` in `docs.config.json` is `/zdep-docs`
+- Check that domain is `https://ibm-wsc.github.io`
 
 ## 📞 Support
 
 For questions or issues:
-- Contact: Jacob Emery (jemery@ibm.com)
-- Slack: #wsc-z-automation (or your team channel)
+- **Deployment issues**: Contact Jacob Emery
+- **Content updates**: Edit markdown files and run `./deploy-public.sh`
+- **Framework issues**: Check beamz-docs repository
+- **Slack**: #wsc-demo-hosting-in-techzone-workstreams
 
 ## 📄 License
 
