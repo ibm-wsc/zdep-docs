@@ -227,11 +227,11 @@ GitHub Enterprise (github.ibm.com) doesn't have GitHub-hosted runners available,
 
 ## 📚 Related Repositories
 
-- **beamz-docs** - Documentation framework (Next.js + IBM Carbon Design System)
-- **beamz-zlpn-docs** - Example documentation site for ZLPN program
-- **z1090-deployer-ansible** - Ansible playbooks for z/OS provisioning
-- **zconfig-zade** - Ansible automation for z/OS middleware configuration
-- **mirror-z1090-images** - Playbooks for snapshot and publishing to Cloud Object Storage
+- **[beamz-docs](https://github.ibm.com/zcomm/beamz-docs/)** - Documentation framework (Next.js + IBM Carbon Design System)
+- **[beamz-zlpn-docs](https://github.ibm.com/zcomm/beamz-zlpn-docs)** - Example documentation site for ZLPN program
+- **[z1090-deployer-ansible](https://github.ibm.com/zEco-IaaS/z1090-deployer-ansible)** - Ansible playbooks for z/OS provisioning
+- **[zconfig-zade](https://github.ibm.com/zEco-IaaS/zconfig-zade)** - Ansible automation for z/OS middleware configuration
+- **[mirror-z1090-images](https://github.ibm.com/zEco-IaaS/mirror-z1090-images/tree/cio-aap)** - Playbooks for snapshot and publishing to Cloud Object Storage (cio-aap branch)
 
 ## 🆘 Troubleshooting
 
