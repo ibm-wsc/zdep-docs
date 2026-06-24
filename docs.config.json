@@ -209,12 +209,86 @@
           "path": "/using-images/provisioning"
         },
         {
-          "title": "Connecting to Your Instance",
+          "title": "Connecting to z/OS",
           "path": "/using-images/connecting"
         },
         {
-          "title": "Demo Scenarios",
-          "path": "/using-images/demo-scenarios"
+          "title": "Image Catalog",
+          "path": "/using-images/catalog",
+          "children": [
+            {
+              "title": "Overview",
+              "path": "/using-images/catalog/overview"
+            },
+            {
+              "title": "Machine Learning for z/OS",
+              "path": "/using-images/catalog/mlz",
+              "children": [
+                {
+                  "title": "Overview",
+                  "path": "/using-images/catalog/mlz/overview"
+                },
+                {
+                  "title": "What's Included",
+                  "path": "/using-images/catalog/mlz/whats-included"
+                },
+                {
+                  "title": "Demo Scenarios",
+                  "path": "/using-images/catalog/mlz/demo-scenarios"
+                },
+                {
+                  "title": "Getting Started",
+                  "path": "/using-images/catalog/mlz/getting-started"
+                },
+                {
+                  "title": "Configuration Details",
+                  "path": "/using-images/catalog/mlz/configuration"
+                },
+                {
+                  "title": "Tips & Best Practices",
+                  "path": "/using-images/catalog/mlz/tips"
+                },
+                {
+                  "title": "Troubleshooting",
+                  "path": "/using-images/catalog/mlz/troubleshooting"
+                }
+              ]
+            },
+            {
+              "title": "z/OS Standard + CICS",
+              "path": "/using-images/catalog/cics",
+              "children": [
+                {
+                  "title": "Overview",
+                  "path": "/using-images/catalog/cics/overview"
+                },
+                {
+                  "title": "What's Included",
+                  "path": "/using-images/catalog/cics/whats-included"
+                },
+                {
+                  "title": "Demo Scenarios",
+                  "path": "/using-images/catalog/cics/demo-scenarios"
+                },
+                {
+                  "title": "Getting Started",
+                  "path": "/using-images/catalog/cics/getting-started"
+                },
+                {
+                  "title": "Configuration Details",
+                  "path": "/using-images/catalog/cics/configuration"
+                },
+                {
+                  "title": "Tips & Best Practices",
+                  "path": "/using-images/catalog/cics/tips"
+                },
+                {
+                  "title": "Troubleshooting",
+                  "path": "/using-images/catalog/cics/troubleshooting"
+                }
+              ]
+            }
+          ]
         },
         {
           "title": "FAQs",
