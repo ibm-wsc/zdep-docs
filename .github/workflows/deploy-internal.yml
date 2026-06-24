@@ -23,8 +23,9 @@ jobs:
 
       - name: Configure Git for GitHub Enterprise
         run: |
-          git config --global url."https://github.ibm.com/".insteadOf "ssh://git@github.ibm.com/"
-          git config --global url."https://github.ibm.com/".insteadOf "git@github.ibm.com:"
+          git config --global url."https://${{ github.token }}@github.ibm.com/".insteadOf "ssh://git@github.ibm.com/"
+          git config --global url."https://${{ github.token }}@github.ibm.com/".insteadOf "git@github.ibm.com:"
+          git config --list
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,6 +33,8 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
+        env:
+          GIT_TERMINAL_PROMPT: 0
         run: npm install
 
       - name: Build internal documentation
