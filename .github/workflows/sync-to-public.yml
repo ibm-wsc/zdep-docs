@@ -7,7 +7,7 @@ on:
 
 jobs:
   sync:
-    runs-on: self-hosted
+    runs-on: ibm-x86-64-small
     steps:
       - name: Checkout internal repo
         uses: actions/checkout@v4
