@@ -10,15 +10,13 @@ IBM TechZone provides on-demand access to pre-configured z/OS demo environments.
 
 ### 1. Access TechZone
 
-Navigate to IBM TechZone and search for "WSC z/OS Demo Images"
+Navigate to IBM TechZone and find the Collection named "[z/OS Customized Demo Images](https://techzone.ibm.com/collection/zos-custom/environments)".
 
 ### 2. Select Your Image
 
 Choose from available demo images:
-- **CICS Demo Image** - Transaction processing demonstrations
-- **Db2 Demo Image** - Database management scenarios
-- **IMS Demo Image** - Hierarchical database demos
-- **MQ Demo Image** - Message queuing integration
+- **z/OS Standard Image + CICS**
+- 
 
 ### 3. Configure Your Reservation
 

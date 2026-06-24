@@ -14,7 +14,7 @@ Start here to provision and use demo images from TechZone:
 - [Demo Documentation](./using-images/getting-started) - Reference for how to use the different images in the catalog to demonstrate z/OS and related products.
 
 <!-- internal-only -->
-### For IBM Z Ecosystem Team Members
+### For Image Developers
 Platform access and image development:
 - [Onboarding Guide](./getting-started/onboarding) - Get platform access
 - [Provisioning Workflow](./provisioning/provision-workflow) - Deploy test instances
@@ -26,33 +26,36 @@ Platform access and image development:
 
 The platform consists of three main layers:
 
-### 1. z/OS Standard Image Foundation
-The base layer shared by all specialized demo images:
-- z/OS 3.1 or 3.2 with standard system layout
+### 1. z/OS Standard Image
+The base layer shared by all customized z/OS images in this catalog.
+- Shared by multiple IBM programs, built by the IBM Z Ecosystem Infrastructure team using infrastructure-as-code best practices and modern tooling.
+- Detailed z/OS system layout information can be found [here](https://zlpn-docs.zlpn.wdc.app.cirrus.ibm.com/docs/hdisv/image-configuration/system-layout/)
+- Standardized z/OS image for demos to be built on.
 - RACF security configuration and SMS setup
 - Network connectivity via VPN
 - SSH access for administration
-- Built with infrastructure-as-code best practices
 
 ### 2. WSC Customization Pipeline
-WSC automation extends the base image with specialized configurations:
-- **Ansible Automation Platform**: Orchestrates provisioning and configuration
-- **zconfig Automation**: Applies middleware-specific customizations (CICS, Db2, IMS, MQ)
-- **IBM Cloud Object Storage**: Stores image snapshots
-- **Snapshot Tools**: Captures and publishes configured images
+Automation in the Worldwide Systems Center extends the Standard Imag with specialized configurations:
+- **Ansible Automation Platform**: Orchestrates provisioning and configuration using Ansible.
+- **zconfig Automation**: Applies middleware-specific customizations (CICS, Db2, IMS, MQ) in combination with Ansible. Sign up for public beta access to zconfig [here](https://ibm.biz/zconfig-beta).
+- **Snapshot Tools**: Captures and publishes configured images to Cloud Object Storage
+- **IBM Cloud Object Storage**: Stores image snapshots for eventual use by TechZone for provisioning
 
 ### 3. TechZone Self-Service
-The final delivery mechanism for technical sales:
-- Demo-ready images available for immediate provisioning
+The final delivery mechanism for technical sales and business partners:
+- A catalog of demo-ready images available for immediate provisioning on TechZone [here](https://techzone.ibm.com/collection/zos-custom/environments).
 - No additional setup or configuration required
 - Secure VPN access to z/OS environments
 - Self-service lifecycle management
 
 ## Getting Help
 
-- **Technical Sales & Business Partners**: Contact the TechZone support team
-- **IBM Z Ecosystem Team Members**: Reach out to Jacob Emery on Slack
-- **Issues & Feedback**: Submit via the GitHub repository
+- **Technical Sales & Business Partners**: Contact the TechZone support
+- **Image Developers**: Reach out to Jacob Emery on Slack and join the [#wsc-demo-hosting-in-techzone-workstreams](https://ibm.enterprise.slack.com/archives/C08K4MKMMKK) Slack channel
+- **Issues & Feedback**
+    - Issues and requests for the z/OS Standard Image should be added [here](https://github.ibm.com/IBM-Z-Ecosystem/hrh-configuration/issues).
+    - To request a new image to be made available, submit a WSC Request Form [here](https://wkf.ms/3R2k1pA).
 
 <!-- internal-only -->
 ## For Platform Administrators
@@ -71,10 +74,5 @@ These sections are only visible in the internal build of this documentation.
 
 This site is organized to serve two primary audiences:
 
-- **Using Demo Images** (Public): For technical sales provisioning from TechZone
-- **Getting Started** (Internal): Platform onboarding and access requirements
-- **Provisioning** (Internal): Deploy and manage test instances in WSC
-- **Customization** (Internal): Configure middleware and create new images
-- **Snapshot & Publishing** (Internal): Release images to TechZone
-- **Demo Image Catalog**: Detailed configuration for each available image
-- **Reference**: Technical specifications, FAQs, and troubleshooting
+- **Image Development**: Aimed at creators of the z/OS images in this catalog, and the administrators of that platform.
+- **Demo Delivery**: Aimed at IBM Technical Sales and Business Partners for them to reference when demonstrating z/OS using the images in this catalog on TechZone.

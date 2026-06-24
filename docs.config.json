@@ -1,12 +1,12 @@
 {
   "site": {
-    "title": "WSC z/OS Demo Assets on TechZone",
+    "title": "Z Demo Enablement Program (ZDEP)",
     "prefix": "IBM",
-    "description": "Documentation for IBM WSC z/OS Demo Assets available on TechZone",
+    "description": "Documentation for IBM Z Demo Enablement Program - WSC z/OS Demo Assets on TechZone",
     "toolingRepo": "https://github.ibm.com/zcomm/beamz-docs.git"
   },
   "vars": {
-    "basePath": "/zEco-IaaS/beamz-zos-demo-docs",
+    "basePath": "/zEco-IaaS/zdep-docs",
     "domain": "https://pages.github.ibm.com"
   },
   "navigation": [
