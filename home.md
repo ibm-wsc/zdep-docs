@@ -1,60 +1,58 @@
-# Worldwide Systems Center to TechZone z/OS Demo Asset Pipeline
+# IBM Z Demo Enablement Program (ZDEP)
 
-Welcome to the documentation for the **Worldwide Systems Center to TechZone z/OS Demo Asset Pipeline**. This platform enables IBM technical sales teams to provision fully configured, demo-ready z/OS environments directly from TechZone with no additional setup required.
+Welcome to the documentation for the **Worldwide Systems Center's IBM Z Demo Enablement Program (ZDEP)**. This platform enables IBM and Business Partner technical sales teams to provision fully configured, demo-ready z/OS environments from TechZone with no additional setup required.
 
-## What Makes This Different?
+## Why?
 
-Unlike standard z/OS environments that require extensive configuration, our demo images are:
-
-- **Fully Pre-Configured**: Middleware (CICS, Db2, IMS, MQ) is installed, configured, and ready to use
-- **Demo-Ready**: Sample applications, data, and scenarios are pre-loaded
-- **Zero Setup**: Provision and start demonstrating immediately
-- **Catalog-Based**: Choose from multiple specialized demo images for different use cases
-
-## Platform Overview
-
-This platform consists of three main components:
-
-1. **Provisioning Automation** - Automated z/OS instance deployment using Ansible Automation Platform
-2. **Image Customization** - Tools and processes for creating specialized demo images
-3. **Snapshot & Publishing** - Automated pipeline for capturing and publishing images to TechZone
+IBM technical sales and Business Partners need reliable, scalable access to fully configured z/OS environments for client demonstrations. Even when the primary product isn't z/OS-based, many IBM solutions build on the foundation z/OS provides. This program delivers demo-ready z/OS images that can be provisioned on-demand with zero setup.
 
 ## Quick Links
 
-### For Technical Sales (External Users)
-- [Getting Started with Demo Images](./using-images/getting-started) - Start here for provisioning from TechZone
-- [Available Demo Images](./images/catalog) - Browse the catalog of available images
-- [Demo Scenarios](./using-images/demo-scenarios) - Pre-built demonstration scenarios
+### For Technical Sales & Business Partners
+Start here to provision and use demo images from TechZone:
+- [Demo Catalog](https://techzone.ibm.com/collection/zos-custom/environments) - Browse available images for self-service provisioning on TechZone.
+- [Demo Documentation](./using-images/getting-started) - Reference for how to use the different images in the catalog to demonstrate z/OS and related products.
 
 <!-- internal-only -->
-### For IBM Z Ecosystem Team Members (Internal Users)
-- [Onboarding Guide](./getting-started/onboarding) - Get access to the platform
-- [Provisioning Automation](./provisioning/overview) - Learn about the provisioning system
-- [Image Customization](./customization/overview) - Create and customize demo images
-- [Snapshot & Publishing](./snapshot/overview) - Publish images to TechZone
+### For IBM Z Ecosystem Team Members
+Platform access and image development:
+- [Onboarding Guide](./getting-started/onboarding) - Get platform access
+- [Provisioning Workflow](./provisioning/provision-workflow) - Deploy test instances
+- [Image Customization](./customization/overview) - Build new demo images
+- [Publishing Process](./snapshot/overview) - Release images to TechZone
 <!-- /internal-only -->
 
-## Architecture
+## Platform Architecture
 
-The platform leverages:
+The platform consists of three main layers:
 
-- **Worldwide Systems Center Infrastructure**: z/OS instances running on IBM Z hardware in the Worldwide Systems Center
-- **Ansible Automation Platform**: Orchestrates provisioning, configuration, and lifecycle management
-- **IBM Cloud Object Storage**: Stores z/OS image snapshots
-- **TechZone**: Provides self-service provisioning for technical sales teams
-- **GitHub Actions**: Automates documentation deployment
-
-## Base z/OS Configuration
-
-All demo images share a common base z/OS configuration that includes:
-
-- z/OS 3.1 or 3.2
-- Standard system layout and SMS configuration
-- RACF security setup
+### 1. z/OS Standard Image Foundation
+The base layer shared by all specialized demo images:
+- z/OS 3.1 or 3.2 with standard system layout
+- RACF security configuration and SMS setup
 - Network connectivity via VPN
 - SSH access for administration
+- Built with infrastructure-as-code best practices
 
-Each specialized demo image adds specific middleware and demo content on top of this base.
+### 2. WSC Customization Pipeline
+WSC automation extends the base image with specialized configurations:
+- **Ansible Automation Platform**: Orchestrates provisioning and configuration
+- **zconfig Automation**: Applies middleware-specific customizations (CICS, Db2, IMS, MQ)
+- **IBM Cloud Object Storage**: Stores image snapshots
+- **Snapshot Tools**: Captures and publishes configured images
+
+### 3. TechZone Self-Service
+The final delivery mechanism for technical sales:
+- Demo-ready images available for immediate provisioning
+- No additional setup or configuration required
+- Secure VPN access to z/OS environments
+- Self-service lifecycle management
+
+## Getting Help
+
+- **Technical Sales & Business Partners**: Contact the TechZone support team
+- **IBM Z Ecosystem Team Members**: Reach out to Jacob Emery on Slack
+- **Issues & Feedback**: Submit via the GitHub repository
 
 <!-- internal-only -->
 ## For Platform Administrators
@@ -62,28 +60,21 @@ Each specialized demo image adds specific middleware and demo content on top of 
 This documentation includes internal-only sections marked with blue banners that contain:
 
 - Detailed architecture and infrastructure information
-- Automation playbook documentation
-- Maintenance procedures
+- Automation playbook documentation and maintenance procedures
 - Network and storage configuration details
+- Image development and publishing workflows
 
 These sections are only visible in the internal build of this documentation.
 <!-- /internal-only -->
 
-## Getting Help
+## Documentation Guide
 
-- **Technical Sales**: Contact the TechZone support team
-- **IBM Z Ecosystem Team Members**: Reach out to Jacob Emery on Slack
-- **Issues & Feedback**: Submit via the GitHub repository
+This site is organized to serve two primary audiences:
 
-## Documentation Structure
-
-This site is organized into the following sections:
-
-- **Getting Started**: Onboarding and access requirements
-- **Provisioning Automation**: Using Ansible Automation Platform to deploy instances
-- **Image Customization**: Creating and configuring specialized demo images
-- **Snapshot & Publishing**: Publishing images to TechZone
-- **Demo Image Catalog**: Available images and their configurations
-- **Using Demo Images**: Guide for technical sales teams
-- **Reference**: Architecture, APIs, and technical details
-- **IBM Internal**: Platform administration and maintenance (internal only)
+- **Using Demo Images** (Public): For technical sales provisioning from TechZone
+- **Getting Started** (Internal): Platform onboarding and access requirements
+- **Provisioning** (Internal): Deploy and manage test instances in WSC
+- **Customization** (Internal): Configure middleware and create new images
+- **Snapshot & Publishing** (Internal): Release images to TechZone
+- **Demo Image Catalog**: Detailed configuration for each available image
+- **Reference**: Technical specifications, FAQs, and troubleshooting

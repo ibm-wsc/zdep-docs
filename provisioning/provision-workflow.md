@@ -11,7 +11,7 @@ Before beginning, ensure the following are available:
 - ✅ SSH public key (from onboarding)
 - ✅ Connected to IBM network via Cisco AnyConnect VPN (e.g., AMERICA-FAST)
 
-If these steps haven't been completed, see the [Onboarding Guide](../getting-started/onboarding).
+If these steps haven't been completed, see the [Onboarding Guide](../../getting-started/onboarding).
 
 ---
 
@@ -25,7 +25,7 @@ Go to [CIO Ansible Automation Platform](https://ansible.cio.ibm.com).
 
 The system may automatically prompt to sign in with w3id, or a login screen may appear. Click the profile icon to initiate w3 sign-on.
 
-![AAP login screen](../../getting-started/assets/image8.png)
+![AAP login screen](../assets/image8.png)
 
 ### Troubleshooting Sign-On
 
@@ -49,9 +49,9 @@ The system may automatically prompt to sign in with w3id, or a login screen may 
 2. Search for or find **"Provision z/OS"** in the list
 3. Click the rocket button (🚀) labeled **"Launch Template"**
 
-![Navigate to templates](../../getting-started/assets/image9.png)
+![Navigate to templates](../assets/image9.png)
 
-![Launch Provision z/OS template](../../getting-started/assets/image10.png)
+![Launch Provision z/OS template](../assets/image10.png)
 
 ---
 
@@ -59,9 +59,9 @@ The system may automatically prompt to sign in with w3id, or a login screen may 
 
 A survey form will be presented to configure the z/OS instance. Use the question mark (?) buttons next to each field for detailed guidance.
 
-![Survey form](../../getting-started/assets/image11.png)
+![Survey form](../assets/image11.png)
 
-![Survey help tooltips](../../getting-started/assets/image12.png)
+![Survey help tooltips](../assets/image12.png)
 
 ### Required Fields
 
@@ -114,7 +114,7 @@ The **z/OS Middleware** field accepts a JSON array. Examples:
 2. Review all inputs to ensure they're correct
 3. Click the blue **Finish** button to start provisioning
 
-![Review survey inputs](../../getting-started/assets/image13.png)
+![Review survey inputs](../assets/image13.png)
 
 ### 4.2 Monitor Workflow Progress
 
@@ -122,7 +122,7 @@ The workflow will take approximately **1 hour** to complete. A workflow visualiz
 
 **Tip**: Use the magnifier (+) button in the bottom left to zoom in and see what's happening.
 
-![Workflow visualizer](../../getting-started/assets/image14.png)
+![Workflow visualizer](../assets/image14.png)
 
 ### 4.3 Workflow Stages
 
@@ -170,7 +170,7 @@ Once the workflow completes successfully:
    - **z/OS Guest IP**: For connecting to z/OS
    - **Linux Host IP**: For troubleshooting (if needed)
 
-![IP addresses in artifacts](../../getting-started/assets/image15.png)
+![IP addresses in artifacts](../assets/image15.png)
 
 **Option B: Via Output**
 1. Scroll to the bottom of the output
@@ -188,7 +188,7 @@ Linux Host IP: 192.168.32.15
 
 ## Step 6: Connect to Your z/OS Instance
 
-Now that the instance is provisioned, connection can be established. See the [Connecting to z/OS](../using-images/connecting) guide for detailed instructions.
+Now that the instance is provisioned, connection can be established. See the [Connecting to z/OS](../../using-images/connecting) guide for detailed instructions.
 
 ### Quick Connection Test
 
@@ -214,7 +214,7 @@ z/OS instances can also be provisioned using the EVA Slack bot. This is useful f
 
 In Slack, start a new message with the **EVA** app.
 
-![Start EVA conversation](../../getting-started/assets/image16.png)
+![Start EVA conversation](../assets/image16.png)
 
 ### 2. Initiate Workflow
 
@@ -223,14 +223,14 @@ Type and send:
 /workflow-job-template
 ```
 
-![EVA workflow command](../../getting-started/assets/image17.png)
+![EVA workflow command](../assets/image17.png)
 
 ### 3. Select Template
 
 1. In the dialog box, type: `Provision z/OS`
 2. Click the **'Create'** button
 
-![Select Provision z/OS template](../../getting-started/assets/image18.png)
+![Select Provision z/OS template](../assets/image18.png)
 
 ### 4. Fill Out Form
 
@@ -238,7 +238,7 @@ Type and send:
 2. Fill out the same survey fields as in the AAP web interface
 3. Click **'Run'**
 
-![Fill out EVA form](../../getting-started/assets/image19.png)
+![Fill out EVA form](../assets/image19.png)
 
 ### 5. Monitor Progress
 
@@ -246,7 +246,7 @@ Type and send:
 2. If prompted to authenticate, click the link again after signing in
 3. Click the **'Output'** tab to see the workflow visualizer
 
-![EVA job link](../../getting-started/assets/image20.png)
+![EVA job link](../assets/image20.png)
 
 ---
 
@@ -254,10 +254,10 @@ Type and send:
 
 After provisioning the z/OS instance:
 
-1. **[Connect to Your Instance](../using-images/connecting)** - Set up TSO access and test connectivity
-2. **[Customize Your Image](../customization/overview)** - Add demo content and configurations
-3. **[Create a Snapshot](../snapshot/creating-snapshots)** - Capture the customized image
-4. **[Publish to TechZone](../snapshot/publishing-techzone)** - Make it available for technical sales
+1. **[Connect to Your Instance](../../using-images/connecting)** - Set up TSO access and test connectivity
+2. **[Customize Your Image](../../customization/overview)** - Add demo content and configurations
+3. **[Create a Snapshot](../../snapshot/creating-snapshots)** - Capture the customized image
+4. **[Publish to TechZone](../../snapshot/publishing-techzone)** - Make it available for technical sales
 
 ---
 
@@ -265,11 +265,11 @@ After provisioning the z/OS instance:
 
 Once the instance is running, available operations include:
 
-- **[Reboot](../provisioning/instance-management#rebooting)** - Restart the z/OS instance
-- **[Recreate](../provisioning/instance-management#recreating)** - Rebuild with a different configuration
-- **[Teardown](../provisioning/instance-management#teardown)** - Delete the instance
+- **[Reboot](../../provisioning/instance-management#rebooting)** - Restart the z/OS instance
+- **[Recreate](../../provisioning/instance-management#recreating)** - Rebuild with a different configuration
+- **[Teardown](../../provisioning/instance-management#teardown)** - Delete the instance
 
-See the [Instance Management](../provisioning/instance-management) guide for details.
+See the [Instance Management](../../provisioning/instance-management) guide for details.
 
 ---
 
@@ -318,4 +318,4 @@ Yes! Select **"Keep z/OS User Volume"** in the Teardown workflow, then use the s
 
 - **Platform Issues**: Contact Jacob Emery on Slack
 - **AAP General Issues**: Check `#cio-ansible` Slack channel
-- **Access Issues**: See the [Onboarding Guide](../getting-started/onboarding)
+- **Access Issues**: See the [Onboarding Guide](../../getting-started/onboarding)

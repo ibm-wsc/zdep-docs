@@ -32,7 +32,7 @@ ssh zosadmn@192.168.32.16 -i ~/.ssh/id_rsa
 
 Replace `192.168.32.16` with the actual z/OS IP address.
 
-![SSH connection to z/OS](../../getting-started/assets/image27.png)
+![SSH connection to z/OS](../assets/image27.png)
 
 #### 1.3 Set TSO Password
 
@@ -44,7 +44,7 @@ password_change.py -u ZOSADMN -p <new_passphrase>
 
 Follow the on-screen instructions. The passphrase must meet RACF requirements:
 
-![Password change script](../../getting-started/assets/image28.png)
+![Password change script](../assets/image28.png)
 
 **RACF Passphrase Rules:**
 - Maximum length: 100 characters
@@ -54,7 +54,7 @@ Follow the on-screen instructions. The passphrase must meet RACF requirements:
 - At least 2 non-alphabetic characters (numbers, punctuation, special characters, blanks)
 - No more than 2 consecutive identical characters
 
-![Password validation](../../getting-started/assets/image29.png)
+![Password validation](../assets/image29.png)
 
 ### 2. Connect to WSC VPN (for 3270 Access)
 
@@ -65,13 +65,13 @@ Use Cisco AnyConnect to connect to the WSC VPN:
 3. Enter the WSC VPN credentials
 4. Click Connect
 
-![Connect to WSC VPN](../../getting-started/assets/image21.png)
+![Connect to WSC VPN](../assets/image21.png)
 
 ### 3. Launch Terminal Emulator
 
 Open the 3270 terminal emulator (e.g., IBM Host On-Demand)
 
-![IBM Host On-Demand](../../getting-started/assets/image22.png)
+![IBM Host On-Demand](../assets/image22.png)
 
 ### 4. Configure Connection
 
@@ -90,13 +90,13 @@ TSO ZOSADMN
 
 Enter the password when prompted.
 
-![TSO login](../../getting-started/assets/image23.png)
+![TSO login](../assets/image23.png)
 
-![TSO password prompt](../../getting-started/assets/image24.png)
+![TSO password prompt](../assets/image24.png)
 
-![TSO login success](../../getting-started/assets/image25.png)
+![TSO login success](../assets/image25.png)
 
-![ISPF main menu](../../getting-started/assets/image26.png)
+![ISPF main menu](../assets/image26.png)
 
 ## Troubleshooting
 
@@ -118,4 +118,4 @@ Enter the password when prompted.
 ## Next Steps
 
 - [Demo Scenarios](./demo-scenarios) - Start running demonstrations
-- [FAQs](../reference/faqs) - Common questions and answers
+- [FAQs](../../reference/faqs) - Common questions and answers
