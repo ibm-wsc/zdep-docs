@@ -39,6 +39,8 @@ Fill out the [Worldwide Systems Center Request Form](https://ibm.biz/wsc-request
 | **Hostname / IP Address** | 192.168.32.x |
 | **Requested Desired Date** | [Give a few days from today] |
 
+![WSC request form](../assets/image6.png)
+
 ### Tips for Justification
 
 Be specific about the use case:

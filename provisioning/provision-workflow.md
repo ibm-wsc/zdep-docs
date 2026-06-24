@@ -25,6 +25,8 @@ Go to [CIO Ansible Automation Platform](https://ansible.cio.ibm.com).
 
 The system may automatically prompt to sign in with w3id, or a login screen may appear. Click the profile icon to initiate w3 sign-on.
 
+![AAP login screen](../../getting-started/assets/image8.png)
+
 ### Troubleshooting Sign-On
 
 **Authentication Redirect Delay**
@@ -47,11 +49,19 @@ The system may automatically prompt to sign in with w3id, or a login screen may 
 2. Search for or find **"Provision z/OS"** in the list
 3. Click the rocket button (🚀) labeled **"Launch Template"**
 
+![Navigate to templates](../../getting-started/assets/image9.png)
+
+![Launch Provision z/OS template](../../getting-started/assets/image10.png)
+
 ---
 
 ## Step 3: Fill Out the Survey
 
 A survey form will be presented to configure the z/OS instance. Use the question mark (?) buttons next to each field for detailed guidance.
+
+![Survey form](../../getting-started/assets/image11.png)
+
+![Survey help tooltips](../../getting-started/assets/image12.png)
 
 ### Required Fields
 
@@ -104,11 +114,15 @@ The **z/OS Middleware** field accepts a JSON array. Examples:
 2. Review all inputs to ensure they're correct
 3. Click the blue **Finish** button to start provisioning
 
+![Review survey inputs](../../getting-started/assets/image13.png)
+
 ### 4.2 Monitor Workflow Progress
 
 The workflow will take approximately **1 hour** to complete. A workflow visualizer will show the progress.
 
 **Tip**: Use the magnifier (+) button in the bottom left to zoom in and see what's happening.
+
+![Workflow visualizer](../../getting-started/assets/image14.png)
 
 ### 4.3 Workflow Stages
 
@@ -156,6 +170,8 @@ Once the workflow completes successfully:
    - **z/OS Guest IP**: For connecting to z/OS
    - **Linux Host IP**: For troubleshooting (if needed)
 
+![IP addresses in artifacts](../../getting-started/assets/image15.png)
+
 **Option B: Via Output**
 1. Scroll to the bottom of the output
 2. Look for the IP addresses in the final output messages
@@ -198,6 +214,8 @@ z/OS instances can also be provisioned using the EVA Slack bot. This is useful f
 
 In Slack, start a new message with the **EVA** app.
 
+![Start EVA conversation](../../getting-started/assets/image16.png)
+
 ### 2. Initiate Workflow
 
 Type and send:
@@ -205,10 +223,14 @@ Type and send:
 /workflow-job-template
 ```
 
+![EVA workflow command](../../getting-started/assets/image17.png)
+
 ### 3. Select Template
 
 1. In the dialog box, type: `Provision z/OS`
 2. Click the **'Create'** button
+
+![Select Provision z/OS template](../../getting-started/assets/image18.png)
 
 ### 4. Fill Out Form
 
@@ -216,11 +238,15 @@ Type and send:
 2. Fill out the same survey fields as in the AAP web interface
 3. Click **'Run'**
 
+![Fill out EVA form](../../getting-started/assets/image19.png)
+
 ### 5. Monitor Progress
 
 1. Click the link to the created job to open it in AAP
 2. If prompted to authenticate, click the link again after signing in
 3. Click the **'Output'** tab to see the workflow visualizer
+
+![EVA job link](../../getting-started/assets/image20.png)
 
 ---
 

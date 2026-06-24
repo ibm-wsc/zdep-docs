@@ -71,6 +71,8 @@ ssh-keygen -t rsa -b 4096
 - Private key: `~/.ssh/id_rsa`
 - Public key: `~/.ssh/id_rsa.pub`
 
+![SSH key generation](../assets/image7.png)
+
 ---
 
 ## Retrieve Your Public Key

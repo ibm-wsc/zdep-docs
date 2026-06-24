@@ -29,12 +29,16 @@ Go to [AccessHub](https://ibm.biz/accesshub) and sign in with IBM credentials.
 1. Click on **"Start an Access Request"** at the top
 2. Select **"Application"** in the pop-up window
 
+![AccessHub start request](../assets/image1.png)
+
 ## Search for CIO Ansible
 
 1. In the search bar on the left, enter **"CIO Ansible"**
 2. Click the search icon
 3. Select the **"CIO Ansible"** application from the results
 4. Click **Next**
+
+![Search for CIO Ansible](../assets/image2.png)
 
 ## Select the Required Entitlement
 
@@ -44,6 +48,8 @@ Go to [AccessHub](https://ibm.biz/accesshub) and sign in with IBM credentials.
    ```
 2. Click **"+ADD"** next to the entitlement
 3. Click **Next**
+
+![Select entitlement](../assets/image3.png)
 
 ## Provide Justification
 
@@ -57,6 +63,8 @@ IBM technical sales enablement and TechZone publishing.
 
 Click **Submit Request**.
 
+![Provide justification](../assets/image4.png)
+
 ## Wait for Approval
 
 1. The first line manager will receive an approval request
@@ -64,6 +72,8 @@ Click **Submit Request**.
 3. Once the "Entitlement Owner Task" is approved, the request will be marked **"Complete"**
 
 Request status can be checked anytime by clicking **"Request History"** on the AccessHub home page.
+
+![Request approval status](../assets/image5.png)
 
 ## Verify Access
 
