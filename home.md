@@ -75,4 +75,4 @@ These sections are only visible in the internal build of this documentation.
 This site is organized to serve two primary audiences:
 
 - **Image Development**: Aimed at creators of the z/OS images in this catalog, and the administrators of that platform.
-- **Demo Delivery**: Aimed at IBM Technical Sales and Business Partners for them to reference when demonstrating z/OS using the images in this catalog on TechZone.
+- **Demo Delivery**: Aimed at IBM Technical Sales and Business Partners for them to reference when demonstrating z/OS using the images in this catalog on TechZone. 
