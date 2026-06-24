@@ -146,42 +146,120 @@ zdep-docs/
 
 ## 🚀 Deployment
 
-### Quick Deploy to Public Site
+### First-Time Setup
 
-Use the provided script:
+Before deploying, set up both repositories:
+
+#### 1. Clone the Repositories
 
 ```bash
+# Clone the internal documentation repo (source)
+cd ~/Documents/workdir/git/beamz
+git clone git@github.ibm.com:zEco-IaaS/zdep-docs.git
+
+# Clone the public deployment repo (target) - in the parent directory
+cd ..
+git clone git@github.com:ibm-wsc/zdep-docs.git
+```
+
+Your directory structure should look like:
+```
+~/Documents/workdir/git/
+├── beamz/
+│   └── zdep-docs/          # Internal repo (source of truth)
+└── zdep-docs/              # Public repo (deployment target)
+```
+
+#### 2. Install Dependencies
+
+```bash
+cd beamz/zdep-docs
+npm install
+```
+
+#### 3. Make Deploy Script Executable
+
+```bash
+chmod +x deploy-public.sh
+```
+
+### Daily Workflow: Making Changes and Deploying
+
+#### Step 1: Edit Documentation
+
+```bash
+cd ~/Documents/workdir/git/beamz/zdep-docs
+
+# Edit your markdown files
+# For example:
+code using-images/getting-started.md
+```
+
+#### Step 2: Preview Your Changes Locally
+
+```bash
+# Start the preview server
+npm run preview
+
+# Open http://localhost:3000/docs in your browser
+# Verify your changes look correct
+# Press Ctrl+C to stop the preview when done
+```
+
+#### Step 3: Commit Your Changes to Internal Repo
+
+```bash
+# Add your changes
+git add .
+
+# Commit with a descriptive message
+git commit -m "Update getting started guide with new screenshots"
+
+# Push to internal repo
+git push origin main
+```
+
+#### Step 4: Deploy to Public Site
+
+```bash
+# Run the deployment script
 ./deploy-public.sh
 ```
 
-This script:
-1. Builds the public documentation (`npm run build:public`)
-2. Copies built files to the `zdep-docs` public repository
-3. Commits and pushes to trigger GitHub Actions deployment
+The script will:
+1. Build the public documentation (`npm run build:public`)
+2. Copy built files to `../../zdep-docs/` (the public repository)
+3. Commit and push to trigger GitHub Actions deployment
 
-### Manual Deployment Steps
+#### Step 5: Verify Deployment
 
-If you prefer to run commands manually:
+1. Check GitHub Actions: https://github.com/ibm-wsc/zdep-docs/actions
+2. Wait for deployment to complete (~2-3 minutes)
+3. Visit: https://ibm-wsc.github.io/zdep-docs/
+4. Verify your changes are live
+
+### Manual Deployment (Alternative)
+
+If you prefer to run commands manually instead of using the script:
 
 ```bash
 # 1. Build public site (strips internal-only content)
 npm run build:public
 
 # 2. Copy to public repo
-cp -r .docs-engine/out/* ../zdep-docs/
+cp -r .docs-engine/out/* ../../zdep-docs/
 
-# 3. Deploy
-cd ../zdep-docs
+# 3. Navigate to public repo
+cd ../../zdep-docs
+
+# 4. Commit and push
 git add .
 git commit -m "Deploy: $(date '+%Y-%m-%d %H:%M:%S')"
 git push origin main
+
+# 5. Return to internal repo
+cd ../beamz/zdep-docs
 ```
-
-### Verify Deployment
-
-1. Check GitHub Actions: https://github.com/ibm-wsc/zdep-docs/actions
-2. Wait for deployment to complete (~2-3 minutes)
-3. Visit: https://ibm-wsc.github.io/zdep-docs/
 
 ### What Gets Published
 
