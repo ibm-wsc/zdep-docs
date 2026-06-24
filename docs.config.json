@@ -201,26 +201,20 @@
       "internal": false,
       "children": [
         {
-          "title": "Using Demo Images",
-          "path": "/using-images",
-          "children": [
-            {
-              "title": "Getting Started",
-              "path": "/using-images/getting-started"
-            },
-            {
-              "title": "Provisioning from TechZone",
-              "path": "/using-images/provisioning"
-            },
-            {
-              "title": "Connecting to Your Instance",
-              "path": "/using-images/connecting"
-            },
-            {
-              "title": "Demo Scenarios",
-              "path": "/using-images/demo-scenarios"
-            }
-          ]
+          "title": "Getting Started",
+          "path": "/using-images/getting-started"
+        },
+        {
+          "title": "Provisioning from TechZone",
+          "path": "/using-images/provisioning"
+        },
+        {
+          "title": "Connecting to Your Instance",
+          "path": "/using-images/connecting"
+        },
+        {
+          "title": "Demo Scenarios",
+          "path": "/using-images/demo-scenarios"
         },
         {
           "title": "FAQs",
