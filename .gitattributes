@@ -1,5 +1,0 @@
-# Exclude GitHub workflows from being synced to public repo
-.github/ export-ignore
-.gitattributes export-ignore
-
-# Made with Bob
